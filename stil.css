@@ -1,0 +1,188 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    font-family: Georgia, Verdana, sans-serif;
+    font-weight: 500;
+}
+
+body {
+
+    background: linear-gradient(to right, hsl(200, 100%, 50%), hsl(175, 100%, 50%));
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin:0;
+    /* padding:0; */
+    /* border:0; */
+    /* border: solid; */
+    /* overflow: hidden; */
+    
+}
+
+.clock {
+    /* margin: 100px auto; */
+    width: 300px;
+    height: 300px;
+    background-color: white; 
+    border-radius: 50%;
+    border: solid 2px black;
+    position: relative;
+
+}
+
+.clock .number {
+    font-size: 30px;
+    /* --rotations : 0; */
+
+    position: absolute;
+    /* üst üste binsin diye tüm number classlı kutular position absolute yapıyor */
+    width: 100%;
+    height: 100%;
+    /* background-color: red; */
+    /* background-color sadece kutuyu görmek için yapmıştık */
+    /* border: solid 2px black; */
+    /* border  kutuların nasıl yerleştiğini görmek için yapmıştık */
+    text-align: center;
+
+
+    /* transform: rotate(var(--rotations)); */
+    /* burada bir değişken tanımlayıpdeğişkenle transformu kontrol ediyor */
+}
+
+/* altta sadece --rotations değişkeninin değerini değiştiriyor */
+/* .clock .number1 {--rotations: 30deg;}
+.clock .number2 {--rotations: 60deg;}
+.clock .number3 {--rotations: 90deg;}
+.clock .number4 {--rotations: 120deg;}
+.clock .number5 {--rotations: 150deg;}
+.clock .number6 {--rotations: 180deg;}
+.clock .number7 {--rotations: 210deg;}
+.clock .number8 {--rotations: 2400deg;}
+.clock .number9 {--rotations: 270deg;}
+.clock .number10 {--rotations: 300deg;}
+.clock .number11 {--rotations: 330deg;} */
+/* .clock .number12 {--rotations: 360deg;} */
+/* number12 için 360 dereceye gerek yok zaten olması gereken poziyonda */
+
+
+/* yukarıdakinin yerine böyle tek tek transform özelliği değiştrilebilirdi de */
+.clock .number1 {
+    transform: rotate(30deg)
+}
+
+.clock .number2 {
+    transform: rotate(60deg)
+}
+
+.clock .number3 {
+    transform: rotate(90deg)
+}
+
+.clock .number4 {
+    transform: rotate(120deg)
+}
+
+.clock .number5 {
+    transform: rotate(150deg)
+}
+
+.clock .number6 {
+    transform: rotate(180deg)
+}
+
+.clock .number7 {
+    transform: rotate(210deg)
+}
+
+.clock .number8 {
+    transform: rotate(240deg)
+}
+
+.clock .number9 {
+    transform: rotate(270deg)
+}
+
+.clock .number10 {
+    transform: rotate(300deg)
+}
+
+.clock .number11 {
+    transform: rotate(330deg)
+}
+
+.clock .hand {
+    position: absolute;
+
+    /* .clock containerinin içinde absolute pozisyonlandığı için bottom ve left değerleri verilmeli*/
+
+    bottom: 50%;
+    left: 50%;
+
+    /* transform- rotate yaparken nereyi baz alarak çevirsin diye bottom seçiyoruz */
+    transform-origin: bottom;
+    /* genişliğinin %50si kadar x ekseninde geriye alıyor */
+    /* transform: translateX(-50%); */
+    /* border: solid 1px white; */
+
+   
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    z-index: 10;
+}
+
+.clock .second {
+    --rotateSecond : 0;
+    width: 2px;
+    height:38%;
+    background-color: red;
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate(calc(var(--rotateSecond) * 1deg));
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    z-index: 10;
+   
+
+}
+
+.clock .minute {
+    --rotateMinute : 0;
+    width: 5px;
+    height: 33%;
+    background-color: black;
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate(calc(var(--rotateMinute) * 1deg));
+    
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    z-index: 10;
+    
+}
+
+
+.clock .hour {
+    --rotateHour : 0;
+    width: 10px;
+    height: 27%;
+    background-color: black;
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate(calc(var(--rotateHour) * 1deg));
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    z-index: 10;
+    
+}
+
+.center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width:20px;
+    height:20px;
+    border-radius: 50%;
+    background-color: black;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+    border:solid 2px red;
+}
